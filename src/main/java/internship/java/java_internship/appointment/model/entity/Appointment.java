@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -21,8 +22,12 @@ import java.util.UUID;
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @NotNull
     UUID id;
+    @NotNull
     String clientPESEL;
+    @NotNull
     UUID catId;
+    @NotNull
     LocalDateTime date;
 }
